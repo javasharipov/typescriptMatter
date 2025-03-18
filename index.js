@@ -1,83 +1,83 @@
-// 1 - masala
-var Student = /** @class */ (function () {
-    function Student(name, age, grade) {
-        this.name = name;
-        this.age = age;
-        this.grade = grade;
+// 1
+var Book = /** @class */ (function () {
+    function Book(title, author, yearPublished) {
+        this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
     }
-    Student.prototype.getInfo = function () {
-        return "Name: ".concat(this.name, ", Age: ").concat(this.age, ", Grade: ").concat(this.grade);
+    Book.prototype.getDetails = function () {
+        return "Title: ".concat(this.title, ", Author: ").concat(this.author, ", Year Published: ").concat(this.yearPublished);
     };
-    return Student;
+    return Book;
 }());
-var student = new Student('Khasan', 20, 'F');
-console.log(student.getInfo());
-// 2 - masala
-var BankAccount = /** @class */ (function () {
-    function BankAccount(initialBalance) {
-        if (initialBalance === void 0) { initialBalance = 0; }
-        this.balance = initialBalance;
+var book = new Book('To Kill a Mockingbird', 'Harper Lee', 1960);
+console.log(book.getDetails());
+// 2
+var Wallet = /** @class */ (function () {
+    function Wallet(initialAmount) {
+        if (initialAmount === void 0) { initialAmount = 0; }
+        this.amount = initialAmount;
     }
-    BankAccount.prototype.getBalance = function () {
-        return this.balance;
+    Wallet.prototype.getAmount = function () {
+        return this.amount;
     };
-    BankAccount.prototype.deposit = function (amount) {
-        this.balance += amount;
+    Wallet.prototype.addMoney = function (value) {
+        this.amount += value;
     };
-    BankAccount.prototype.withdraw = function (amount) {
-        if (amount > this.balance) {
-            return 'Insufficient balance.';
+    Wallet.prototype.spendMoney = function (value) {
+        if (value > this.amount) {
+            return 'Not enough funds.';
         }
-        this.balance -= amount;
+        this.amount -= value;
     };
-    return BankAccount;
+    return Wallet;
 }());
-var account = new BankAccount();
-account.deposit(100);
-account.withdraw(49);
-console.log(account.getBalance());
-// 3 - masala
-var Circle = /** @class */ (function () {
-    function Circle(radius) {
-        this.pi = 3.14;
-        this.radius = radius;
+var wallet = new Wallet(200);
+wallet.addMoney(150);
+wallet.spendMoney(80);
+console.log(wallet.getAmount());
+// 3
+var Rectangle = /** @class */ (function () {
+    function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
     }
-    Circle.prototype.getArea = function () {
-        var area = this.pi * Math.pow(this.radius, 2);
-        return "Area of Circle: ".concat(area);
+    Rectangle.prototype.getArea = function () {
+        var area = this.width * this.height;
+        return "Area of Rectangle: ".concat(area);
     };
-    return Circle;
+    return Rectangle;
 }());
-var circle = new Circle(2);
-console.log(circle.getArea());
-// 4 - masala
-var Product = /** @class */ (function () {
-    function Product(name, price) {
+var rectangle = new Rectangle(5, 10);
+console.log(rectangle.getArea());
+// 4 s
+var Item = /** @class */ (function () {
+    function Item(name, price) {
         this.name = name;
         this.price = price;
     }
-    Product.prototype.getPrice = function () {
+    Item.prototype.getPrice = function () {
         return this.price;
     };
-    Product.prototype.applyDiscount = function (percentage) {
+    Item.prototype.applyDiscount = function (percentage) {
         this.price -= (this.price * percentage) / 100;
     };
-    return Product;
+    return Item;
 }());
-var product = new Product('Phone', 500);
-product.applyDiscount(20);
-console.log(product.getPrice());
-// 5 - masala
-var Car = /** @class */ (function () {
-    function Car(brand, model, year) {
+var item = new Item('Laptop', 1000);
+item.applyDiscount(15);
+console.log(item.getPrice());
+// 5
+var Laptop = /** @class */ (function () {
+    function Laptop(brand, model, year) {
         this.brand = brand;
         this.model = model;
         this.year = year;
     }
-    Car.prototype.getInfo = function () {
+    Laptop.prototype.getDetails = function () {
         return "Brand: ".concat(this.brand, ", Model: ").concat(this.model, ", Year: ").concat(this.year);
     };
-    return Car;
+    return Laptop;
 }());
-var car = new Car('Toyota', 'Corolla', 2022);
-console.log(car.getInfo());
+var laptop = new Laptop('Apple', 'MacBook Pro', 2023);
+console.log(laptop.getDetails());

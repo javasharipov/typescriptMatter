@@ -1,76 +1,77 @@
-// 1 - masala
+// 1
 
-class Student {
-	name: string
-	age: number
-	grade: string
+class Book {
+	title: string
+	author: string
+	yearPublished: number
 
-	constructor(name: string, age: number, grade: string) {
-		this.name = name
-		this.age = age
-		this.grade = grade
+	constructor(title: string, author: string, yearPublished: number) {
+		this.title = title
+		this.author = author
+		this.yearPublished = yearPublished
 	}
 
-	getInfo(): string {
-		return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`
+	getDetails(): string {
+		return `Title: ${this.title}, Author: ${this.author}, Year Published: ${this.yearPublished}`
 	}
 }
 
-const student = new Student('Khasan', 20, 'F')
-console.log(student.getInfo())
+const book = new Book('To Kill a Mockingbird', 'Harper Lee', 1960)
+console.log(book.getDetails())
 
-// 2 - masala
+// 2
 
-class BankAccount {
-	private balance: number
+class Wallet {
+	private amount: number
 
-	constructor(initialBalance: number = 0) {
-		this.balance = initialBalance
+	constructor(initialAmount: number = 0) {
+		this.amount = initialAmount
 	}
 
-	getBalance(): number {
-		return this.balance
+	getAmount(): number {
+		return this.amount
 	}
 
-	deposit(amount: number): void {
-		this.balance += amount
+	addMoney(value: number): void {
+		this.amount += value
 	}
 
-	withdraw(amount: number): string | void {
-		if (amount > this.balance) {
-			return 'Insufficient balance.'
+	spendMoney(value: number): string | void {
+		if (value > this.amount) {
+			return 'Not enough funds.'
 		}
-		this.balance -= amount
+		this.amount -= value
 	}
 }
 
-const account = new BankAccount()
-account.deposit(100)
-account.withdraw(49)
-console.log(account.getBalance())
+const wallet = new Wallet(200)
+wallet.addMoney(150)
+wallet.spendMoney(80)
+console.log(wallet.getAmount())
 
-// 3 - masala
+// 3
 
-class Circle {
-	radius: number
-	pi: number = 3.14
+class Rectangle {
+	width: number
+	height: number
 
-	constructor(radius: number) {
-		this.radius = radius
+	constructor(width: number, height: number) {
+		this.width = width
+		this.height = height
 	}
 
 	getArea(): string {
-		const area = this.pi * this.radius ** 2
-		return `Area of Circle: ${area}`
+		const area = this.width * this.height
+		return `Area of Rectangle: ${area}`
 	}
 }
 
-const circle = new Circle(2)
-console.log(circle.getArea())
+const rectangle = new Rectangle(5, 10)
+console.log(rectangle.getArea())
 
-// 4 - masala
+// 4 s
 
-class Product {
+class Item {
 	name: string
 	price: number
 
@@ -88,13 +89,13 @@ class Product {
 	}
 }
 
-const product = new Product('Phone', 500)
-product.applyDiscount(20)
-console.log(product.getPrice())
+const item = new Item('Laptop', 1000)
+item.applyDiscount(15)
+console.log(item.getPrice())
 
-// 5 - masala
+// 5
 
-class Car {
+class Laptop {
 	brand: string
 	model: string
 	year: number
@@ -105,10 +106,10 @@ class Car {
 		this.year = year
 	}
 
-	getInfo(): string {
+	getDetails(): string {
 		return `Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}`
 	}
 }
 
-const car = new Car('Toyota', 'Corolla', 2022)
-console.log(car.getInfo())
+const laptop = new Laptop('Apple', 'MacBook Pro', 2023)
+console.log(laptop.getDetails())
